@@ -42,7 +42,12 @@
   p, h1, h2, h3 { margin: 0; }
 
   /* multiply lets the artwork's white paper melt into the page colour */
-  .garland { width: min(100%, 620px); height: auto; mix-blend-mode: multiply; }
+  /* brightness lifts the scanned paper to pure white so multiply erases it; the mask softens the cut edges */
+  .garland {
+    width: min(100%, 620px); height: auto; mix-blend-mode: multiply; filter: brightness(1.07) contrast(1.06);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
   .garland.flip { transform: scaleY(-1); }
   .script { font-family: var(--script); color: var(--gold); line-height: 1.15; }
   h2 { font: 400 clamp(2.6rem, 9vw, 3.6rem)/1.1 var(--script); color: var(--gold); text-wrap: balance; }
@@ -98,7 +103,7 @@
   .vine li { position: relative; display: grid; }
   .vine li::before {
     content: ""; position: absolute; left: -52px; top: -4px; width: 40px; height: 40px;
-    background: url(flower.jpg) center / 54px; border-radius: 50%; mix-blend-mode: multiply;
+    background: url(flower.jpg) center / 54px; border-radius: 50%; mix-blend-mode: multiply; filter: brightness(1.07) contrast(1.06);
   }
   .vine b { font-weight: 600; letter-spacing: .14em; font-variant-numeric: tabular-nums; }
   .vine i { font-size: 1.05rem; color: var(--rose); }

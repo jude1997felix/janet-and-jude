@@ -242,7 +242,7 @@
   $('seal').onclick = () => cover.classList.add('open');
   $('replay').onclick = () => { scrollTo(0, 0); cover.classList.remove('open'); };
 
-  const RSVP_URL = ''; // paste the Google Form link here
+  const RSVP_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyhvziJib75CIhdgRMGpbVHAYbYwiWZ6ob_ptyElYWHiQrDA/viewform'; // paste the Google Form link here
   if (RSVP_URL) { $('rsvp-link').href = RSVP_URL; $('rsvp').hidden = false; }
 
   const wedding = new Date('2027-04-17T15:00:00+01:00');
